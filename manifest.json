@@ -5,14 +5,14 @@
   "manifest_version": 3,
   "content_scripts": [
     {
-      "matches": ["https://www.ebay-kleinanzeigen.de/m-meine-anzeigen.html*"],
+      "matches": ["https://www.kleinanzeigen.de/m-meine-anzeigen.html*"],
       "run_at": "document_idle",
       "js": ["pages/offer-overview/index.js"],
       "css": ["pages/offer-overview/styles.css"]
     },
     {
       "matches": [
-        "https://www.ebay-kleinanzeigen.de/p-anzeige-bearbeiten.html*"
+        "https://www.kleinanzeigen.de/p-anzeige-bearbeiten.html*"
       ],
       "run_at": "document_idle",
       "js": ["pages/offer-details/index.js"]
