@@ -5,7 +5,6 @@
   "manifest_version": 3,
   "content_scripts": [
     {
-      
       "matches": ["https://www.kleinanzeigen.de/m-meine-anzeigen.html*"],
       "run_at": "document_idle",
       "js": ["pages/offer-overview/index.js"],
