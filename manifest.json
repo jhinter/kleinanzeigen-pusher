@@ -1,7 +1,7 @@
 {
   "name": "Kleinanzeigen Pusher",
   "description": "Wiedereinstellen und Pushen von alten Kleinanzeigen mit einem Klick",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "manifest_version": 3,
   "content_scripts": [
     {
@@ -14,7 +14,8 @@
       "matches": [
         "https://www.kleinanzeigen.de/p-anzeige-bearbeiten.html*"
       ],
-      "run_at": "document_idle",
+      "run_at": "document_start",
+      "world": "MAIN",
       "js": ["pages/offer-details/index.js"]
     }
   ],
