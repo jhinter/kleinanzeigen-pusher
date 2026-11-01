@@ -1,0 +1,140 @@
+:root {
+  --ekp-green: #3f9a2f;
+  --ekp-green-dark: #2e7d22;
+  --ekp-ink: #1d2a17;
+  --ekp-muted: #55604f;
+}
+
+.ekp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-sizing: border-box;
+  border: 2px solid var(--ekp-green);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font: 600 14px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.ekp-btn--small {
+  padding: 5px 14px;
+}
+
+.ekp-btn--primary {
+  background: var(--ekp-green);
+  color: #fff !important;
+}
+
+.ekp-btn--primary:hover {
+  background: var(--ekp-green-dark);
+  border-color: var(--ekp-green-dark);
+}
+
+.ekp-btn--secondary {
+  background: #fff;
+  color: var(--ekp-green-dark) !important;
+}
+
+.ekp-btn--secondary:hover {
+  background: #f0f7ec;
+}
+
+.ekp-btn:focus-visible {
+  outline: 3px solid #9fd77f;
+  outline-offset: 2px;
+}
+
+.ekp-btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.ekp-btn__icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.ekp-banner {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483000;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-sizing: border-box;
+  width: min(440px, calc(100vw - 32px));
+  padding: 16px 18px;
+  border-left: 6px solid var(--ekp-green);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  color: var(--ekp-ink);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  animation: ekp-slide-in 0.25s ease-out;
+}
+
+.ekp-banner__logo {
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
+
+.ekp-banner__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ekp-banner__body strong {
+  font-size: 15px;
+}
+
+.ekp-banner__text {
+  margin: 4px 0 0;
+  color: var(--ekp-muted);
+}
+
+.ekp-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ekp-banner__actions:empty {
+  display: none;
+}
+
+.ekp-banner__close {
+  flex: none;
+  border: 0;
+  background: none;
+  color: var(--ekp-muted);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .ekp-banner {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ekp-banner {
+    animation: none;
+  }
+}
+
+@keyframes ekp-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}

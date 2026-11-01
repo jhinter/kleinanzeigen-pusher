@@ -1,27 +1,34 @@
 {
-  "name": "Kleinanzeigen Pusher",
-  "description": "Wiedereinstellen und Pushen von alten Kleinanzeigen mit einem Klick",
-  "version": "1.0.1",
   "manifest_version": 3,
+  "name": "Kleinanzeigen Pusher",
+  "short_name": "KA Pusher",
+  "description": "Alte Kleinanzeigen mit einem Klick neu einstellen, damit sie wieder ganz oben in den Suchergebnissen stehen.",
+  "version": "2.0.0",
+  "homepage_url": "https://github.com/jhinter/kleinanzeigen-pusher",
   "content_scripts": [
     {
-      "matches": ["https://www.ebay-kleinanzeigen.de/m-meine-anzeigen.html*"],
+      "matches": ["https://www.kleinanzeigen.de/m-meine-anzeigen.html*"],
       "run_at": "document_idle",
-      "js": ["pages/offer-overview/index.js"],
-      "css": ["pages/offer-overview/styles.css"]
+      "js": ["src/common.js", "src/my-ads.js"],
+      "css": ["src/styles.css"]
     },
     {
-      "matches": [
-        "https://www.ebay-kleinanzeigen.de/p-anzeige-bearbeiten.html*"
-      ],
+      "matches": ["https://www.kleinanzeigen.de/p-anzeige-bearbeiten.html*"],
       "run_at": "document_idle",
-      "js": ["pages/offer-details/index.js"]
+      "js": ["src/common.js", "src/edit-ad.js"],
+      "css": ["src/styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/logo-48.png"],
+      "matches": ["https://www.kleinanzeigen.de/*"]
     }
   ],
   "icons": {
-    "16": "/images/logo-16.png",
-    "32": "/images/logo-32.png",
-    "48": "/images/logo-48.png",
-    "128": "/images/logo-128.png"
+    "16": "images/logo-16.png",
+    "32": "images/logo-32.png",
+    "48": "images/logo-48.png",
+    "128": "images/logo-128.png"
   }
 }
