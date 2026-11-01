@@ -1,5 +1,3 @@
-<p align="center"><img src="images/logo-128.png" width="96" alt=""></p>
-
 # Kleinanzeigen Pusher
 
 Chrome extension that republishes your old [kleinanzeigen.de](https://www.kleinanzeigen.de) ads with one click so they show up at the top of search results again.
